@@ -26,5 +26,5 @@ else
 EOF
 fi
 
-./nodebb build
+NODE_OPTIONS="--max-old-space-size=320" ./nodebb build --series
 exec node loader.js --no-daemon --no-silent
