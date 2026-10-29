@@ -5,7 +5,7 @@ WORKDIR /app
 # כדאי לבדוק מהו הענף היציב העדכני ב-github.com/NodeBB/NodeBB
 ARG NODEBB_BRANCH=v4.x
 RUN git clone --depth 1 --branch ${NODEBB_BRANCH} https://github.com/NodeBB/NodeBB.git .
-RUN RUN cp install/package.json package.json && npm install --omit=dev
+RUN cp install/package.json package.json && npm install --omit=dev
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 CMD ["/app/start.sh"]
